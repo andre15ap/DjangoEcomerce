@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>{% block title %}Djando e-comerce{% endblock %}</title>
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+</head>
+<body>
+	<!-- <div class="navbar navbar-dark bg-dark navbar-fixed-top"> -->
+		<!-- <div class="container"> -->
+		<div class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+			<div class="container">
+				<a class="navbar-brand" href="{% url 'index' %}">Django E-Comerce</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  	<div class="collapse navbar-collapse" id="navbarNav">
+				    <ul class="navbar-nav ul-nav">
+				      <li class="nav-item">
+				        <a class="nav-link" href="{% url 'index' %}">Inicio <span class="sr-only"></span></a>
+				      </li>
+				      <li class="nav-item dropdown">
+				      		<!-- funcao get_absolute_url retorna o mesmo que url 'catalog:category' sluk= cat.sluk -->
+					      <a class="nav-link dropdown-toggle" href="{{ get_absolute_url }}" id="navbardrop" data-toggle="dropdown">
+					        Categorias
+					      </a>
+					      <div class="dropdown-menu">
+					      	{% for cat in categories %}
+					        <a class="dropdown-item" href="{% url 'catalog:category' slug=cat.slug %}">{{ cat }}</a>
+					        {% endfor %}
+					      </div>
+					    </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="{% url 'contact' %}">Contato</a>
+				      </li>
+				      <li class="nav-item conta">
+				        <a class="nav-link " href="#">Minha Conta</a>
+				      </li>
+				    </ul>
+				</div>
+			</div>
+		</div>
+		
+		<!-- </div> -->
+	<!-- </div> -->
+
+	<!-- <div class="conteudo container">
+		<div class="content">
+		
+		</div>
+	</div> -->
+	<div class="container">
+		{% block container %} {% endblock %}
+	</div>
+</body>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 ">
+				<ul class="list-unstyled lista-footer">
+					<li class="pull-right"><a href="#top">Voltar ao Topo</a></li>
+					<li><a href="">Inicio</a></li>
+					<li><a href="">Produdos</a></li>
+					<li><a href="">Contato</a></li>
+					<li><a href="">Termos e Privacidade</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!--    <div id="footer">
+      <div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<ul class="list-unstyled lista-footer">
+					<li class="pull-right"><a href="#top">Voltar ao Topo</a></li>
+					<li><a href="">Inicio</a></li>
+					<li><a href="">Produdos</a></li>
+					<li><a href="">Contato</a></li>
+					<li><a href="">Termos e Privacidade</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+    </div> -->
+
+</html>

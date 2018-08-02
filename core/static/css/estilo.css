@@ -1,0 +1,66 @@
+.teste{
+	font-size: 25px;
+	color: red;
+}
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align: center;
+}
+
+.ul-nav{
+	width: 100%;
+}
+
+
+.conta{
+	display: inline-block;
+	position: relative;
+	
+	/*float:right;*/
+	/*padding-left: 58%;*/
+}
+
+/*html, body {height:90%;}*/
+
+.conteudo {
+	min-height:100%;
+    position:relative;
+	margin-top: 30px;
+	padding: 20px;
+	background-color: #cfd2d6;
+	border-radius: 10px;
+}
+.margin-sup{
+	margin-top: 20px;
+}
+
+.lsta-footer{
+	display: inline-block;
+	position: absolute;
+}
+
+.lista-footer li {
+    float: left;
+}
+
+.lista-footer li a {
+    display: block;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.lista-footer li a:hover {
+	color: white;
+   background-color: #3a4a5b;
+}
+
+.lista-footer a {
+	text-decoration: none;
+}
