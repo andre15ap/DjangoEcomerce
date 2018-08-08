@@ -64,6 +64,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # app
+                'catalog.context_processors.categories'
             ],
         },
     },
@@ -116,16 +118,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+LANGUAGE_CODE = 'pt-br'
+TIME_ZONE = 'America/Araguaina'
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
-
+DATE_FORMAT = '%d/%m/%Y'
+TIME_FORMAT = '%H:%M:%S'
+DATE_INPUT_FORMATS = ('%d/%m/%Y',)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
