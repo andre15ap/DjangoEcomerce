@@ -22,16 +22,13 @@
 			    	<li class="nav-item">
 			        	<a class="nav-link" href="{% url 'index'%}">Inicio</a>
 			      	</li>
-			      	<!-- <li class="nav-item">
-			        	<a class="nav-link" href="#">Categorias</a>
-			      	</li> -->
 			      	<li class="nav-item dropdown"> 
 			      		<a class="nav-link dropdown-toggle" href="{{ get_absolute_url }}" id="navbardrop" data-toggle="dropdown">
 				        Categorias
 				    	</a>
 				    	<div class="dropdown-menu">
 				      		{% for cat in categories %}
-				        		<a class="dropdown-item" href="#">{{ cat }}</a>
+				        		<a class="dropdown-item" href="{{ cat.get_absolute_url }}">{{ cat }}</a>
 				        	{% endfor %}
 				      </div>
 				    </li>
@@ -48,34 +45,14 @@
 <div class="container conteudo">
 	{% block container %} {% endblock %}
 </div>
-<!-- <footer class="footer">
-  <div class="container">
-		<div class="row">
-			<div class="col-lg-10 col-sm-9 col-md-9">
-				<ul class="list-unstyled lista-footer">
-					<li><a href="">Inicio</a></li>
-					<li><a href="">Produdos</a></li>
-					<li><a href="">Contato</a></li>
-					<li><a href="">Termos e Privacidade</a></li>
-				</ul>
-			</div>
-			<div class="col-lg-2 col-sm-3 col-md-3">
-				<ul class="list-unstyled lista-footer">
-					<li><a href="#top">Voltar ao Topo</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</footer> -->
-
 <footer class="footer">
   <div class="container">
 		<div class="row">
 			<div class="col-lg-10 col-sm-9 col-md-9">
 				<ul class="list-unstyled lista-footer">
 					<li><a href="{% url 'index'%}">Inicio</a></li>
-					<li><a href="{% url 'product'%}">Produdos</a></li>
-					<li><a href="">Contato</a></li>
+					<li><a href="{% url 'catalog:product_list' %}">Produdos</a></li>
+					<li><a href="{% url 'contact'%}">Contato</a></li>
 					<li><a href="">Termos e Privacidade</a></li>
 				</ul>
 			</div>
@@ -88,23 +65,5 @@
 	</div>
 </footer>
 </body>
-
-
-<!-- <footer class="footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 ">
-				<ul class="list-unstyled lista-footer">
-					<li class="pull-right"><a href="#top">Voltar ao Topo</a></li>
-					<li><a href="">Inicio</a></li>
-					<li><a href="">Produdos</a></li>
-					<li><a href="">Contato</a></li>
-					<li><a href="">Termos e Privacidade</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</footer> -->
-
 
 </html>

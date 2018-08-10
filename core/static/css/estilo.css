@@ -6,7 +6,7 @@
 }
 
 .font-grande{
-	font-size: 40px;
+	font-size: 50px;
 }
 
 .font-media{
@@ -18,7 +18,8 @@
 }
 
 .footer {
-    position:absolute;
+    position:relative;
+    margin-top: 50px;
     bottom:0;
     width:100%;
     text-align: left;
@@ -50,7 +51,7 @@
 .lista-footer li a {
     display: block;
     font-weight: bold;
-    color: black;
+    color: #73ce9f;
     text-align: center;
     padding: 5px;
     margin: 5px;
@@ -64,5 +65,9 @@
 
 .lista-footer a {
 	text-decoration: none;
+}
+
+.direita{
+	text-align: right;
 }
 

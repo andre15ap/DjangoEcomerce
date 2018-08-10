@@ -7,24 +7,23 @@
 {% block container %}
 	
 	<div class="page-header">
-		<h1>lista de produtos</h1>
+		<h1 class="negrito">Lista de produtos</h1>
 	</div>
 	<div class="row">
 		{% for product in product_list %}
-		<div class="col-sm-6 col-md-4">
-		<div class="card">
-		  <img class="card-img-top" src="http://placehold.it/350x250" alt="Card image cap">
-		  <div class="card-body">
-		  	<h3 class="card-text">{{ product }}</h3>
-		    <p class="card-text">{{ product.description | linebreaks }}</p>
-		    <p class="card-text">
-				<a href="#" class="btn btn-success" role="button">Button</a>
-				<a href="#" class="btn btn-default" role="button">Button</a>
-			</p>
-		  </div>
-
-		</div>
-	</div>
-	{% endfor %}
+			<div class="col-sm-6 col-md-4">
+				<div class="card">
+			  		<img class="card-img-top" src="http://placehold.it/350x250" alt="Card image cap">
+			  		<div class="card-body">
+			  			<h3 class="card-text">{{ product }}</h3>
+			    		<p class="card-text">{{ product.description | linebreaks }}</p>
+			    		<p class="card-text">
+							<a href="{{ product.get_absolute_url }}" class="btn btn-success" role="button">Visualizar</a>
+							<a href="#" class="btn btn-default" role="button">Button</a>
+						</p>
+			  		</div>
+				</div>
+			</div>
+		{% endfor %}
 	</div>
 {% endblock %}

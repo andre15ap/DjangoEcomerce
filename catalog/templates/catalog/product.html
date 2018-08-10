@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}
-	Produto | {{ block.super }}
+	{{product}} | {{ block.super }}
 {% endblock %}
 
 {% block container %}
+	<div>
+		<h1 class="negrito">{{product}}</h1>
+	</div>
 	<div class="row margin-sup">
 		<div class="col-sm-4">
 			<a href="#" class="thumbnail">

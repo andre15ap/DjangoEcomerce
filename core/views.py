@@ -14,7 +14,5 @@ def contact(request):
 def product(request):
 	return render(request, 'product.html')
 
-def product_list(request):
-	return render(request, 'product_list.html')
 
 

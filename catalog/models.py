@@ -18,7 +18,8 @@ class Category(models.Model):
 		return self.name
 
 	# runcao retona o link para o template
-	# aparece o ver no site no django
+	# aparece o ver no site no django admin
+	# kwargs são parametros em forma de dicionario, ou seja nomeados
 	def get_absolute_url(self):
 		return reverse('catalog:category', kwargs={'slug': self.slug})
 
@@ -39,3 +40,6 @@ class Product(models.Model):
 
 	def __str__(self):
 		return self.name
+
+	def get_absolute_url(self):
+		return reverse('catalog:product', kwargs={'slug': self.slug})

@@ -16,21 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-# ]
-# from django.urls import include, path
-from django.conf.urls import url, include
+
+from django.urls import include, path
+# from django.conf.urls import url, include #SERA DESCONTINUADA
 
 from core import views
 app_name = 'DjangoEcomerce'
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    url(r'^$',views.index, name="index"),
-    url(r'^contato/$',views.contact, name="contact"),
-    url(r'^produto/$',views.product, name="product"),
-    url(r'^produtos/$',views.product_list, name="product_list"),
-    # url(r'^produtos/', include(('catalog.urls', 'catalog'), namespace='catolog')),
-    # path('produtos/', include('catalog.urls', namespace='catologo')),
+    #url ira ser substituido por path, url sera depreciada
+    # url(r'^$',views.index, name="index"),
+    # url(r'^contato/$',views.contact, name="contact"),
+    # url(r'^produto/$',views.product, name="product"),
+    # url(r'^produtos/', include(('catalog.urls', 'catalog'), namespace='catolog')), #novo modo de usar o include com url
+    
+    path('',views.index, name='index'),
+    path('contato/', views.contact, name='contact'),
+    # path('produtos/', include('catalog.urls'), name='catalog'),
+    path('catalogo/', include(('catalog.urls', 'catalog'), namespace='catalog')),
 ]
