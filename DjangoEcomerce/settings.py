@@ -25,7 +25,10 @@ SECRET_KEY = 'l)+2cv4cx$9jo$7yz2#!mx7=&7pcn2#qveerq2hzh8sldw$^i!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    #ip da maquina para acessar locamente em rede
+    # '192.168.1.118'
+]
 
 
 # Application definition
@@ -37,8 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #libs 
+    'widget_tweaks',
+
+    #apps
     'core',
     'catalog',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +89,7 @@ WSGI_APPLICATION = 'DjangoEcomerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mysql_cymysql', 
-        'NAME': 'djangobd_v1',
+        'NAME': 'djangodb_v1',
         'USER': 'admin',
         'PASSWORD': 'admin',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
@@ -131,3 +140,18 @@ DATE_INPUT_FORMATS = ('%d/%m/%Y',)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+#email
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = 'djangoEcomerce@djangoecomerce.com'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+LOGIN_URL ='login'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'login'
+
+AUTH_USER_MODEL = 'accounts.User'

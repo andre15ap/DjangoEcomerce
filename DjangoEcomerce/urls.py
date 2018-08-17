@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth.views import LoginView, LogoutView
 
 
 from django.urls import include, path
 # from django.conf.urls import url, include #SERA DESCONTINUADA
 
 from core import views
+
+
 app_name = 'DjangoEcomerce'
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,8 +34,14 @@ urlpatterns = [
     # url(r'^produto/$',views.product, name="product"),
     # url(r'^produtos/', include(('catalog.urls', 'catalog'), namespace='catolog')), #novo modo de usar o include com url
     
-    path('',views.index, name='index'),
+    path('',views.IndexView.as_view(), name='index'),
     path('contato/', views.contact, name='contact'),
+    
     # path('produtos/', include('catalog.urls'), name='catalog'),
     path('catalogo/', include(('catalog.urls', 'catalog'), namespace='catalog')),
+    path('contas/', include(('accounts.urls', 'accounts'), namespace='accounts')),
+    # path('catalogo/', include('catalog.urls'), name='catalog'),
+
+    path('entrar',LoginView.as_view(), name='login'),
+    path('sair',LogoutView.as_view(), name='logout')
 ]
